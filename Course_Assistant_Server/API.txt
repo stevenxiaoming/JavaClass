@@ -1,0 +1,65 @@
+rootUrl: http://shucourse.stevenming.com.cn/
+
+课程对象——
+cId: 	   课程号[8位 数字字母组合]
+cName: 	   课程名
+cCredit:   学分[0-n的浮点数，有0.5分的情况]
+tId: 	   教师号[4位数字]
+tName: 	   教师名
+cTime: 	   上课时间[体育的上课时间需要处理]
+cLocation: 上课地点
+cSize: 	   容量
+cNumber:   人数
+cCampus:   校区
+cLimit:    选课限制
+qaTime:    答疑时间
+qaLocation:答疑地点
+
+page对象——
+currPage:   当前页
+pageSize:   每页记录数
+totalCount: 记录总数
+totalPage:  总页数
+list:       课程对象(List数组)
+
+精确查找单个课程信息
+url: course_info
+post:
+      cId - 课程号
+      tId - 教师号
+      (cId为8位，tId为4位)
+return:
+	失败
+	  success: 0
+	  message: 错误信息
+	成功
+	  success: 1
+	  course:  课程对象
+
+查找课程List
+支持模糊查询，post内容除page至少填写一项。
+url: course_list
+post:
+      cId: 	课程号[8位 数字字母组合]
+      cName: 	课程名
+      cCredit:  学分[0-n的浮点数，有0.5分的情况]
+      tId: 	教师号[4位数字]
+      tName: 	教师名
+      cTime: 	上课时间[体育的上课时间需要处理]
+      cLocation:上课地点
+      cSize: 	容量
+      cNumber:  人数
+      cCampus:  校区
+      cLimit:   选课限制
+      page:     页码
+      (实现分页查找，每页30项)     
+return:
+	失败
+	  success: 0
+	  message: 错误信息
+	成功
+	  success: 1
+	  course:  page对象	
+
+
+

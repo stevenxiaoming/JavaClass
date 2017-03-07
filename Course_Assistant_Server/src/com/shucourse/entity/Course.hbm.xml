@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+    <class name="com.shucourse.entity.Course" table="_Course">
+        <composite-id>
+            <key-property name="cId" column="cId" length="9"/>
+            <key-property name="tId" column="tId" length="5" />
+        </composite-id>
+        <property name="cName" column="cName" length="30" />
+        <property name="cCredit" column="cCredit" length="3" />
+        <property name="tName" column="tName" />
+        <property name="cTime" column="cTime" />
+        <property name="cLocation" column="cLocation" />
+        <property name="cSize" column="cSize" />
+        <property name="cNumber" column="cNumber" />
+        <property name="cCampus" column="cCampus" />
+        <property name="cLimit" column="cLimit" />
+        <property name="qaTime" column="qaTime" />
+        <property name="qaLocation" column="qaLocation" />
+        
+    </class>
+</hibernate-mapping>
